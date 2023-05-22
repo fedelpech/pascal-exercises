@@ -1,11 +1,10 @@
 { NOTA: No sé si esta bien usar las palabras reservadas de Pascal en minúscula 
-o en mayúscula, las uso como guía visual. Lo que está en minúscula está adentro
-del desarrollo y lo que está en mayúscula está por fuera }
+o en mayúscula, las uso como guía visual }
 
-{ 10. Realizar un programa que lea palabras hasta que se ingresa fin, verifique si
- la palabras cumple con los parámetros, empieza con consonante y termina con vocal }
+{ 10. Realizar un programa que lea palabras hasta que se ingresa "fin", verifique si 
+las palabras cumplen con los parámetros: empieza con consonante y termina con vocal }
 
-PROGRAM verificadorPalabras;
+PROGRAM verificarPalabras;
 
 VAR
     palabra: String;
@@ -30,18 +29,18 @@ BEGIN
     until (palabra = 'fin');
 END.
 
-{ NOTA: Podría hacer más legible y reutilizable el código si lo desarrollo dentro
- de dos funciones }
+{ NOTA: Podría hacer reutilizable el código si lo desarrollo dentro
+de dos funciones }
 
 { 13. Escriba una función para determinar si una fecha es válida, siendo una fecha
- válida el formato dd/mm/yyyy }
+válida el formato dd/mm/yyyy }
 
 { PASOS: Primero, crear una función para identificar si el año es bisiesto o no; segundo,
- crear una función para identificar la cant. de días que tiene cada mes y corregir
- Febrero con la primer función; tercero, crear una función para identificar el formato
- dd/mm/aaaa; cuarto y último, hacer que funcione como sea }
+crear una función para identificar la cant. de días que tiene cada mes y corregir
+Febrero con la primer función; tercero, crear una función para identificar el formato
+dd/mm/aaaa }
 
-PROGRAM verificadorFechas;
+PROGRAM verificarFechas;
 
 FUNCTION esBisiesto(anio: Integer): Boolean;
 BEGIN
@@ -90,7 +89,7 @@ BEGIN
         end;
 end;
 
-{ BASTA DE FUNCIONES }
+{ Hasta acá las funciones }
 
 VAR
     fecha: string;
@@ -114,8 +113,41 @@ BEGIN
 
 END.
 
+{ 17. Escriba un procedimiento en Pascal que muestre los divisores de un
+número x recibido como parámetro }
 
+{ NOTA: Entendí la consigna como escribir un procedimiento en Pascal que 
+muestre los divisores de un número x recibido como parámetro en el número
+1 y 100, como para fijar un principio y un final }
 
+PROGRAM verificarDivisores;
 
+PROCEDURE mostrarDivisores(numero: Integer);
+VAR
+    i: Integer;
+BEGIN
+    writeln('Divisores de ', numero, ' entre 1 y 100:');
+    for i := 1 to 100 do
+    begin
+        if (numero mod i = 0) then
+            writeln(i);
+    end;
+    writeln('Proceso finalizado');
 
+END;
 
+{ Hasta acá el procedimiento }
+
+VAR
+    num: Integer;
+
+BEGIN
+    writeln('Ingresa un número:');
+    readln(num);
+
+    mostrarDivisores(num);
+
+END.
+
+{ NOTA 1: No sé cómo hacer para que se pueda ingresar únicamente un número entero
+y no tire error si meto una letra }
