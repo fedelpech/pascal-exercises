@@ -3,7 +3,7 @@
 program terceraPos;
 
 type
-    cuatroElementos = array[1..4] of integer;
+    cuatroElementos = array[1..4] of Integer;
 
 var
     arreglo: cuatroElementos;
