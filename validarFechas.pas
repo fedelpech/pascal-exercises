@@ -5,7 +5,7 @@ BEGIN
     esBisiesto := ((anio mod 4 = 0) and (anio mod 100 <> 0)) or (anio mod 400 = 0);
 end;
 
-FUNCTION validarDia(dia, mes: Integer): Boolean;
+FUNCTION validarDia(dia, mes, anio: Integer): Boolean;
 BEGIN
     case mes of
         01, 03, 05, 07, 08, 10, 12:
